@@ -1,0 +1,24 @@
+import { MenuItem } from '@mui/material';
+import React, { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
+import { SettingsSelectField, SettingsSelectFieldProps } from './SettingsSelectField';
+
+type Props = SettingsSelectFieldProps;
+
+const presets = [1, 2, 3, 4];
+
+export const PtzCameraDefaultPresetIndexSelectField: FunctionComponent<Props> = (props: Props) => {
+  const { t } = useTranslation();
+
+  return (
+    <SettingsSelectField
+      label={t<string>('window.dashboard.settings.PtzCameraDefaultPresetIndexSelectField.label')}
+      options={presets.map((value) => (
+        <MenuItem value={value} key={value}>
+          {value}
+        </MenuItem>
+      ))}
+      {...props}
+    />
+  );
+};

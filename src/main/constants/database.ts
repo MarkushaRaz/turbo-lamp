@@ -1,0 +1,1 @@
+export const DATABASE_DATETIME_FORMAT = 'YYYY-MM-DD HH:mm:ss.SSS';

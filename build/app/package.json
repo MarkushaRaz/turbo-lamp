@@ -1,0 +1,20 @@
+{
+  "name": "aktru-recorder",
+  "productName": "Aktru Recorder",
+  "version": "1.36.0",
+  "description": "Приложение для проведения аудиовидеозаписи на компьютерах конечных пользователей в систему Актру.",
+  "main": "./dist/main/main.prod.js",
+  "author": "Aktru",
+  "scripts": {
+    "electron-rebuild": "node -r ../../internals/scripts/babel-register.js ../../internals/scripts/electron-rebuild-prod.js",
+    "postinstall": "npm run electron-rebuild"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "aktru-recorder-native": "file:../../dependencies/aktru-recorder-native-1.2.0.tgz",
+    "better-sqlite3": "^8.3.0",
+    "bufferutil": "^4.0.1",
+    "ffmpeg-static": "^5.1.0",
+    "utf-8-validate": "^5.0.2"
+  }
+}

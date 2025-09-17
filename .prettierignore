@@ -1,0 +1,6 @@
+build/app/dist/
+build/release/
+internals/dll/
+node_modules/
+package.json
+package-lock.json

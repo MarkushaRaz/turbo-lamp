@@ -1,0 +1,17 @@
+export enum SDRecorderFunctions {
+  GET_CURRENT_STATE = 'get-current-state',
+  START_RECORDING = 'start-recording',
+  PAUSE_RECORDING = 'pause-recording',
+  STOP_RECORDING = 'stop-recording',
+  SWITCH_CAMERA_PRESET = 'switch-camera-preset',
+  NOTIFY_STATE_CHANGED = 'notify-state-changed',
+  SHOW_INTERFACE = 'show-interface',
+  HIDE_INTERFACE = 'hide-interface',
+  DELETE_RECORD = 'delete-record',
+  EXTEND_RECORDING = 'extend-recording',
+  ENABLE_PRIMARY_AUDIO = 'audio-primary-enable',
+  DISABLE_PRIMARY_AUDIO = 'audio-primary-disable',
+  ENABLE_SECONDARY_AUDIO = 'audio-secondary-enable',
+  DISABLE_SECONDARY_AUDIO = 'audio-secondary-disable',
+  SWITCH_AUDIO_PRESET = 'switch-audio-preset',
+}

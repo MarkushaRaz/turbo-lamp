@@ -1,0 +1,541 @@
+{
+  "app": {
+    "dialog": {
+      "updateAvailable": {
+        "message": "An update is available for Aktru Recorder. Update the app now?"
+      }
+    },
+    "error": {
+      "critical": "A critical error occurred. The app will quit.",
+      "ffmpegNotFound": "FFMPEG could not be found. Please contact the developer.",
+      "unableToParseLicenseData": "Unable to parse the license data. The app will quit.",
+      "unableToProduceFingerprint": "Unable to produce a unique fingerprint of the system",
+      "unableToQuit": {
+        "ongoingRecording": {
+          "content": "Aktru Recorder cannot quit while it is recording. You must first stop the recording in the application window.",
+          "title": "Application cannot shut down right now"
+        },
+        "scheduleEnabled": {
+          "content": "Aktru Recorder cannot quit while scheduled recording is enabled. You must first disable it in the application settings.",
+          "title": "Application cannot shut down"
+        }
+      },
+      "unlicensed": "Your computer is not licensed to run this application."
+    },
+    "name": "Aktru Recorder",
+    "tray": {
+      "balloon": {
+        "runningInBackground": "Aktru Recorder is running in the background. Click the application icon in the notification area to open it."
+      },
+      "exit": "Quit"
+    }
+  },
+  "communication": {
+    "EventNameField": {
+      "label": "Name of the event",
+      "placeholder": "Enter the name of the event"
+    },
+    "authentication": {
+      "title": "Access code entered"
+    },
+    "button": {
+      "begin": "Begin",
+      "cansel": "Cancel",
+      "logIn": "Log in",
+      "share": "To share"
+    },
+    "errors": {
+      "authorizationError": "Authorization error",
+      "invalidAccessCode": "Invalid access code"
+    },
+    "event": {
+      "duration": "Duration",
+      "end": "Ending",
+      "start": "Start"
+    },
+    "screenSharing": {
+      "tab": {
+        "screen": "Full screen",
+        "window": "Window"
+      },
+      "title": "Select the item you want to share."
+    }
+  },
+  "general": {
+    "broadcast": "Broadcast",
+    "camera": "Camera",
+    "cancel": "Cancel",
+    "communication": "Communication",
+    "conference": "Conference",
+    "date": "Date",
+    "delete": "Delete",
+    "desktop": "Desktop",
+    "duration": "Duration",
+    "entryStatus": {
+      "failed": "Recording Failed",
+      "missed": "Missed",
+      "new": "Scheduled",
+      "partiallyUploaded": "Partially Uploaded",
+      "pending": "Starting",
+      "readyToUpload": "Ready to Upload",
+      "recorded": "Recording Finished",
+      "recording": "Recording in Progress",
+      "unknown": "Unknown",
+      "uploaded": "Uploaded",
+      "uploading": "Uploading"
+    },
+    "error": "Error",
+    "history": "History",
+    "newEntry": "New Entry",
+    "no": "No",
+    "ok": "Ok",
+    "reset": "Reset",
+    "save": "Save",
+    "selectDirectory": "Select directory",
+    "status": "Status",
+    "totalSize": "Total Size",
+    "view": "View",
+    "yes": "Yes"
+  },
+  "kaltura": {
+    "category": {
+      "faculty": "Faculties",
+      "group": "Groups",
+      "moodle": "Moodle",
+      "subject": "Subject",
+      "teacher": "Teacher",
+      "type": "Lesson type",
+      "unlisted": "Unlisted",
+      "year": "Year"
+    },
+    "error": {
+      "noConnection": {
+        "message": "You may have entered invalid credentials, or you are not currently connected to the Internet.",
+        "title": "Error connecting to Aktru"
+      }
+    }
+  },
+  "window": {
+    "dashboard": {
+      "about": {
+        "drawerTitle": "About",
+        "windowTitle": "About the App"
+      },
+      "drawer": {
+        "close": "Collapse menu",
+        "open": "Expand menu"
+      },
+      "help": {
+        "drawerTitle": "Help",
+        "windowTitle": "User Guide"
+      },
+      "library": {
+        "deleteDialogContent": "Are you sure you want to delete this entry and all of its data? This operation cannot be reverted.",
+        "drawerTitle": "Library",
+        "loading": "Loading entries, please wait...",
+        "loadingError": "Failed to load entries. The database may be corrupted or unavailable.",
+        "noEntriesFound": "No entries found",
+        "windowTitle": "Local Library"
+      },
+      "settings": {
+        "AudioProcessorTypeSelectField": {
+          "label": "Audio Processor Type"
+        },
+        "AutostartBroadcastsEnabledCheckbox": {
+          "label": "Automatic start of the broadcast"
+        },
+        "PtzCameraDefaultPresetIndexSelectField": {
+          "label": "Default PTZ preset index"
+        },
+        "audioBitrateSelectField": {
+          "label": "Audio bitrate"
+        },
+        "audioProcessorControlsEnabledCheckbox": {
+          "label": "Enable Audio Processor controls"
+        },
+        "audioProcessorIpField": {
+          "label": "Audio Processor IP ",
+          "placeholder": "Enter the IP address of your audio processor"
+        },
+        "authentication": {
+          "label": "Authentication user"
+        },
+        "bridgeModeSelectField": {
+          "broadcast": "Broadcast",
+          "conference": "Conference",
+          "custom": "Custom",
+          "label": "Launch mode"
+        },
+        "broadcastsKeyField": {
+          "label": "RTMP Server Key",
+          "placeholder": "Enter the RTMP server key"
+        },
+        "broadcastsServerField": {
+          "label": "RTMP server address",
+          "placeholder": "Enter the RTMP server address"
+        },
+        "cameraEnabledCheckbox": {
+          "label": "Camera turned on at startup"
+        },
+        "communicationBridgeUrlField": {
+          "label": "Bridge address",
+          "placeholder": "Enter the address of the bridge"
+        },
+        "daysToKeepData": {
+          "helperText": "If the value is zero, automatic deletion of unloaded entries will be disabled",
+          "label": "Entry retention period",
+          "placeholder": "Enter the number of days to keep your uploaded entries on this device"
+        },
+        "deleteAfterUpload": {
+          "label": "Delete after upload"
+        },
+        "disableContextProtection": {
+          "label": "Show the application in the desktop recording",
+          "warning": "App restart required"
+        },
+        "drawerTitle": "Settings",
+        "dualCamModeEnabledCheckbox": {
+          "label": "Enable dual video source mode"
+        },
+        "group": {
+          "audioProcessorSettings": {
+            "title": "Audio Processor Settings"
+          },
+          "communicationSettings": {
+            "title": "Conference and Broadcast Settings"
+          },
+          "connectionSettings": {
+            "title": "Connection Settings"
+          },
+          "moodleSettings": {
+            "title": "Moodle Settings"
+          },
+          "ptzCameraSettings": {
+            "title": "PTZ Camera Settings"
+          },
+          "recordingSettings": {
+            "title": "Recording Settings"
+          },
+          "sakaiSettings": {
+            "title": "Sakai Setting"
+          },
+          "scheduleSettings": {
+            "title": "Schedule Settings"
+          }
+        },
+        "microphoneEnabledCheckbox": {
+          "label": "Microphone turned on at startup"
+        },
+        "mirrorCameraCheckbox": {
+          "label": "Enable mirroring of the camera previews"
+        },
+        "moodleEnabledCheckbox": {
+          "label": "Add recorded entries to Moodle"
+        },
+        "moodleTokenField": {
+          "label": "Moodle Token",
+          "placeholder": "Enter the Moodle API token secret"
+        },
+        "moodleUrlField": {
+          "label": "Moodle URL",
+          "placeholder": "Enter the Moodle URL where you want to add the recorded entries"
+        },
+        "noScheduleTokenWarningText": {
+          "text": "No schedule token detected. Make sure you have a valid license and restart the app."
+        },
+        "noVideoSourceWarning": {
+          "text": "Select and enable at least one video source to make the schedule settings available."
+        },
+        "passwordDialog": {
+          "text": "Please, enter your password to access the expert settings."
+        },
+        "presenceControl": {
+          "label": "Presence control"
+        },
+        "ptzCameraControlsEnabledCheckbox": {
+          "label": "Enable PTZ camera controls"
+        },
+        "ptzCameraIpField": {
+          "label": "PTZ Camera IP",
+          "placeholder": "Enter the IP address of your PTZ camera"
+        },
+        "reactivateScheduleCheckbox": {
+          "label": "Reactivate scheduled recording automatically"
+        },
+        "recordingPath": {
+          "label": "Recordings Path"
+        },
+        "resetPtzCameraPresetCheckbox": {
+          "label": "Reset the camera's preset to the default one after each recording"
+        },
+        "resolutionSelectField": {
+          "label": "Current resolution"
+        },
+        "sakaiEnabledCheckbox": {
+          "label": "Add recorded entries to Sakai"
+        },
+        "sakaiLoginField": {
+          "label": "Sakai Login",
+          "placeholder": "Enter the Sakai API user login"
+        },
+        "sakaiPasswordField": {
+          "label": "Sakai Password",
+          "placeholder": "Enter the Sakai API user password"
+        },
+        "sakaiUrlField": {
+          "label": "Sakai Url",
+          "placeholder": "Enter the Sakai URL where you want to add the recorded entries"
+        },
+        "scheduleCommunicationCheckbox": {
+          "label": "Enable scheduled conference/broadcast launch"
+        },
+        "scheduleEnabledCheckbox": {
+          "label": "Enable scheduled recording"
+        },
+        "scheduleRoomNumber": {
+          "label": "Classroom Number in Aktru Schedule",
+          "placeholder": "Enter the number of the classroom in the Aktru Schedule service"
+        },
+        "scheduleUrlField": {
+          "label": "Aktru Schedule URL",
+          "placeholder": "Enter the Aktru Schedule service URL"
+        },
+        "servicePartnerIdField": {
+          "label": "Service Partner ID",
+          "placeholder": "Enter your Aktru partner identifier"
+        },
+        "servicePartnerSecretField": {
+          "label": "Service Partner Secret",
+          "placeholder": "Enter your Aktru partner admin secret"
+        },
+        "serviceTokenIdField": {
+          "label": "Service Token ID",
+          "placeholder": "Enter your Aktru API token identifier"
+        },
+        "serviceTokenSecretField": {
+          "label": "Service Token Secret",
+          "placeholder": "Enter your Aktru API token secret"
+        },
+        "serviceUrlField": {
+          "label": "Service URL",
+          "placeholder": "Enter the Aktru API service base URL"
+        },
+        "showExpertSettingsSwitch": {
+          "label": "Servicing Mode"
+        },
+        "validationErrors": {
+          "invalidScheduleRoomNumber": "No classroom with the specified number was found in the Schedule Service!",
+          "invalidScheduleUrl": "Schedule Service is not detected at the specified address!"
+        },
+        "videoBitrateSelectField": {
+          "label": "Video Bitrate"
+        },
+        "videoCodecSelectField": {
+          "label": "Video Codec"
+        },
+        "videoResolutionSelectField": {
+          "label": "Video Resolution"
+        },
+        "windowTitle": "App Settings"
+      }
+    },
+    "entry": {
+      "confirmDialog": {
+        "content": "Are you sure you want to cancel and delete this entry?",
+        "title": "Confirmation Required"
+      },
+      "deleteButton": {
+        "text": "Delete entry"
+      },
+      "entryDescriptionField": {
+        "label": "Description",
+        "placeholder": "Detailed entry description"
+      },
+      "entryEmailField": {
+        "label": "Email",
+        "placeholder": "Teacher's email address"
+      },
+      "entryFacultiesField": {
+        "label": "Faculties",
+        "placeholder": "Comma-separated list of faculties"
+      },
+      "entryGroupsField": {
+        "label": "Groups",
+        "placeholder": "Comma-separated list of groups"
+      },
+      "entryNameField": {
+        "label": "Name",
+        "placeholder": "Entry name in Aktru"
+      },
+      "entrySubjectField": {
+        "label": "Subject",
+        "placeholder": "Name of the subject"
+      },
+      "entryTagsField": {
+        "label": "Tags",
+        "placeholder": "Comma-separated list of tags"
+      },
+      "entryTeacherField": {
+        "label": "Teacher",
+        "placeholder": "Teacher's full name"
+      },
+      "entryTypeField": {
+        "label": "Type of class",
+        "placeholder": "Type of class: Lecture, Seminar, Lab, etc."
+      },
+      "entryYearField": {
+        "label": "Year of study",
+        "placeholder": "Year of study"
+      },
+      "passwordDialog": {
+        "title": "Enter the password"
+      },
+      "recordingPreview": {
+        "sourceTitle": "Video Source"
+      },
+      "saveButton": {
+        "text": "Save and Upload"
+      },
+      "title": {
+        "saveEntry": "Save entry",
+        "viewEntry": "View Entry"
+      }
+    },
+    "general": {
+      "close": "Close",
+      "minimize": "Minimize"
+    },
+    "main": {
+      "CaptureSourceSelector": {
+        "dropdown": {
+          "text": "Selecting the capture source"
+        }
+      },
+      "audioSourceSelector": {
+        "dropdown": {
+          "text": "Microphone"
+        },
+        "toggle": {
+          "title": "Click to enable or disable audio capture"
+        }
+      },
+      "cameraSourceSelector": {
+        "dropdown": {
+          "text": "Video Source"
+        },
+        "toggle": {
+          "title": "Click to enable or disable video source capture"
+        }
+      },
+      "desktopAudioCaptureEnabled": {
+        "title": "Capture System Sounds"
+      },
+      "desktopAudioToggle": {
+        "title": "Apps Sounds",
+        "tooltip": {
+          "disabled": "Apps sounds capture is unavailable with current settings",
+          "text": "Click to enable or disable desktop audio capture"
+        }
+      },
+      "desktopSourceSelector": {
+        "dropdown": {
+          "text": "Desktop"
+        },
+        "toggle": {
+          "title": "Click to enable or disable desktop capture"
+        }
+      },
+      "manageButton": {
+        "text": "Settings",
+        "title": "Manage your library and app settings"
+      },
+      "recordButton": {
+        "title": "Start Recording"
+      },
+      "scheduleEnabledIcon": {
+        "title": "Scheduled Recording is enabled"
+      },
+      "sourceSelector": {
+        "toggle": {
+          "title": {
+            "scheduledRecordingEnabled": "Changing sources is not available\nwhile scheduled recording is enabled."
+          }
+        }
+      }
+    },
+    "recording": {
+      "CommunicationPanel": {
+        "text": "Broadcast active!"
+      },
+      "cancelButton": {
+        "title": "Cancel record"
+      },
+      "cancelConfirmDialog": {
+        "buttons": {
+          "confirm": "Delete",
+          "refuse": "Cancel"
+        },
+        "content": {
+          "manual": "Are you sure you want to delete the active recording?",
+          "scheduled": "Are you sure you want to delete the active recording? The next one will be started on schedule."
+        }
+      },
+      "error": {
+        "audioSourceInitError": "Couldn't initialize your audio capture device. Please, make sure it is connected or select another one.",
+        "cameraSourceInitError": "Couldn't initialize your camera capture device. Please, make sure it is connected or select another one.",
+        "desktopAudioSourceInitError": "Couldn't initialize your desktop audio capture device. Please, make sure your antivirus software isn't blocking screen/desktop capture.",
+        "desktopSourceInitError": "Couldn't initialize your desktop capture device. Please, make sure it is connected or select another one.",
+        "emptyRecording": "Nothing was recorded.",
+        "errorWritingToFile": "Recording data couldn't be saved. Please, check if there is enough space on your storage device.",
+        "failedToCheckDiskSpace": "Failed to check free disk space.",
+        "initError": "Initialization Error",
+        "insufficientDiskSpace": "Not enough free disk space. At least {{size}} is required for recording.",
+        "noAudioSource": "No audio source is selected, but audio capture is enabled. Please, select an audio capture device.",
+        "noCameraSource": "No camera source is selected, but camera capture is enabled. Please, select a camera capture device.",
+        "noDesktopSource": "No desktop source is selected, but desktop capture is enabled. Please, select a desktop capture device.",
+        "noVideoSourcesSelected": "No video source is selected. Please, select at least one source: camera or desktop.",
+        "recordingError": "Recording Error",
+        "recordingPathNotSpecified": "Recordings path is not specified. Please, check the settings."
+      },
+      "hideButton": {
+        "title": "Hide window"
+      },
+      "muteDesktopAudioButton": {
+        "mute": {
+          "title": "Mute desktop sounds"
+        },
+        "unmute": {
+          "title": "Unmute desktop sounds"
+        }
+      },
+      "muteMicrophoneAudioButton": {
+        "mute": {
+          "title": "Mute audio"
+        },
+        "unmute": {
+          "title": "Unmute audio"
+        }
+      },
+      "mutedMicrophoneNotification": {
+        "text": "Microphone is muted!"
+      },
+      "pauseButton": {
+        "pause": {
+          "title": "Pause"
+        },
+        "play": {
+          "title": "Resume"
+        }
+      },
+      "previewButton": {
+        "title": "Preview"
+      },
+      "stopButton": {
+        "title": "Stop recording"
+      }
+    },
+    "splash": {
+      "updating": "Checking for and downloading updates..."
+    }
+  }
+}

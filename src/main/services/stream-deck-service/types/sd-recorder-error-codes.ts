@@ -1,0 +1,10 @@
+export enum SDRecorderErrorCodes {
+  // ERR_CONNECT = -2,
+  // ERR_TIMEOUT = -1,
+  OK = 0,
+  ERR_UNKNOWN = 1,
+  ERR_INVALID_FUNCTION = 2,
+  ERR_INVALID_PARAMETER = 3,
+  ERR_NO_EFFECT = 4,
+  ERR_BLOCKED_BY_STATE = 5,
+}

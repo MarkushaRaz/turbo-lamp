@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "_/*": ["src/*"],
+      "_assets/*": ["assets/*"],
+      "_localization/*": ["src/shared/localization/*"],
+      "_main/*": ["src/main/*"],
+      "_renderer/*": ["src/renderer/*"],
+      "_shared/*": ["src/shared/*"]
+    },
+    "pretty": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "target": "esnext"
+  },
+  "exclude": ["node_modules", "test", "build/release", "build/app/dist", "internals/dll"]
+}

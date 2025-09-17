@@ -1,0 +1,15 @@
+export enum WindowPosition {
+  Bottom,
+  BottomLeft,
+  BottomRight,
+  Center,
+  Left,
+  LeftLowerThird,
+  LeftUpperThird,
+  Right,
+  RightLowerThird,
+  RightUpperThird,
+  Top,
+  TopLeft,
+  TopRight,
+}

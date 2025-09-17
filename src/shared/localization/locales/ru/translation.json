@@ -1,0 +1,538 @@
+{
+  "app": {
+    "dialog": {
+      "updateAvailable": {
+        "message": "Для приложения Актру Рекордер доступно обновление. Обновить приложение сейчас?"
+      }
+    },
+    "error": {
+      "critical": "Произошла критическая ошибка. Приложение будет закрыто.",
+      "ffmpegNotFound": "FFMPEG не найден. Пожалуйста, свяжитесь с разработчиком.",
+      "unableToParseLicenseData": "Ошибка разбора данных лицензии. Приложение будет закрыто.",
+      "unableToProduceFingerprint": "Не удалось получить уникальный отпечаток системы.",
+      "unableToQuit": {
+        "ongoingRecording": {
+          "content": "Приложение Актру Рекордер не может быть закрыто во время записи. Сначала необходимо остановить запись в окне приложения.",
+          "title": "Приложение не может быть закрыто сейчас"
+        },
+        "scheduleEnabled": {
+          "content": "Приложение Актру Рекордер не может быть закрыто пока включен режим \"по расписанию\". Сначала отключите его в настройках приложения.",
+          "title": "Приложение не может быть закрыто"
+        }
+      },
+      "unlicensed": "Ваш компьютер не имеет лицензии для запуска этого приложения."
+    },
+    "name": "Актру Рекордер",
+    "tray": {
+      "balloon": {
+        "runningInBackground": "Актру Рекордер работает в фоновом режиме. Кликните иконку приложения в области уведомлений, чтобы открыть его."
+      },
+      "exit": "Выйти"
+    }
+  },
+  "communication": {
+    "EventNameField": {
+      "label": "Название мероприятия",
+      "placeholder": "Введите название мероприятия"
+    },
+    "authentication": {
+      "title": "Введите код доступа"
+    },
+    "button": {
+      "begin": "Начать",
+      "cansel": "Отмена",
+      "logIn": "Авторизоваться",
+      "share": "Поделиться"
+    },
+    "errors": {
+      "authorizationError": "Ошибка авторизации",
+      "invalidAccessCode": "Неверный код доступа"
+    },
+    "event": {
+      "duration": "Длительность",
+      "end": "Окончание",
+      "start": "Начало"
+    },
+    "screenSharing": {
+      "tab": {
+        "screen": "Весь экран",
+        "window": "Окно"
+      },
+      "title": "Выберите элемент, которым нужно поделиться."
+    }
+  },
+  "general": {
+    "broadcast": "Трансляция",
+    "camera": "Камера",
+    "cancel": "Отмена",
+    "communication": "Коммуникация",
+    "conference": "Конференция",
+    "date": "Дата",
+    "delete": "Удалить",
+    "desktop": "Рабочий стол",
+    "duration": "Продолжительность",
+    "entryStatus": {
+      "failed": "Ошибка записи",
+      "missed": "Просрочено",
+      "new": "Запланировано",
+      "partiallyUploaded": "Частично выгружено",
+      "pending": "Начинается",
+      "readyToUpload": "Готово к выгрузке",
+      "recorded": "Запись завершена",
+      "recording": "Записывается",
+      "unknown": "Неизвестно",
+      "uploaded": "Выгружено",
+      "uploading": "Выгружается"
+    },
+    "error": "Ошибка",
+    "history": "История",
+    "newEntry": "Новая запись",
+    "no": "Нет",
+    "ok": "Ок",
+    "reset": "Сбросить",
+    "save": "Сохранить",
+    "selectDirectory": "Выбрать папку",
+    "status": "Статус",
+    "totalSize": "Общий размер",
+    "view": "Смотреть",
+    "yes": "Да"
+  },
+  "kaltura": {
+    "category": {
+      "faculty": "Факультет",
+      "group": "Группа",
+      "moodle": "Moodle",
+      "subject": "Предмет",
+      "teacher": "Преподаватель",
+      "type": "Тип занятия",
+      "unlisted": "Скрытое",
+      "year": "Курс"
+    },
+    "error": {
+      "noConnection": {
+        "message": "Возможно, указаны неверные данные для подключения, или в данный момент нет подключения к интернету.",
+        "title": "Ошибка подключения к Актру"
+      }
+    }
+  },
+  "window": {
+    "dashboard": {
+      "about": {
+        "drawerTitle": "О приложении",
+        "windowTitle": "Информация о приложении"
+      },
+      "drawer": {
+        "close": "Закрыть меню",
+        "open": "Открыть меню"
+      },
+      "help": {
+        "drawerTitle": "Документация",
+        "windowTitle": "Документация пользователя"
+      },
+      "library": {
+        "deleteDialogContent": "Вы уверены, что хотите удалить эту запись и все ее данные? Эта операция не может быть отменена.",
+        "drawerTitle": "Библиотека",
+        "loading": "Загрузка записей, пожалуйста подождите...",
+        "loadingError": "Не удалось загрузить записи. Возможно база данных повреждена или недоступна.",
+        "noEntriesFound": "Записи отсутствуют",
+        "windowTitle": "Локальная библиотека"
+      },
+      "settings": {
+        "AudioProcessorTypeSelectField": {
+          "label": "Тип аудио процессора"
+        },
+        "AutostartBroadcastsEnabledCheckbox": {
+          "label": "Автоматический запуск ретрансляции"
+        },
+        "PtzCameraDefaultPresetIndexSelectField": {
+          "label": "Индекс стандартного ракурса"
+        },
+        "audioBitrateSelectField": {
+          "label": "Аудио битрейт"
+        },
+        "audioProcessorControlsEnabledCheckbox": {
+          "label": "Включить управление аудио процессором"
+        },
+        "audioProcessorIpField": {
+          "label": "IP адрес аудио процессора",
+          "placeholder": "Введите IP адрес аудио процессора"
+        },
+        "authentication": {
+          "label": "Аутентификация пользователя"
+        },
+        "bridgeModeSelectField": {
+          "broadcast": "Трансляция (только чат слушателей)",
+          "conference": "Конференция (чат и аудио слушателей)",
+          "custom": "Спрашивать при запуске (конференция или трансляция)",
+          "label": "Режим запуска"
+        },
+        "broadcastsKeyField": {
+          "label": "Ключ RTMP сервера",
+          "placeholder": "Введите ключ RTMP сервера"
+        },
+        "broadcastsServerField": {
+          "label": "Адрес RTMP сервера",
+          "placeholder": "Введите адрес RTMP сервера"
+        },
+        "cameraEnabledCheckbox": {
+          "label": "Включить камеру при запуске"
+        },
+        "communicationBridgeUrlField": {
+          "label": "Адрес моста",
+          "placeholder": "Введите адрес моста"
+        },
+        "daysToKeepData": {
+          "helperText": "При нулевом значении автоматическое удаление выгруженных записей будет отключено",
+          "label": "Срок хранения записей в днях",
+          "placeholder": "Введите число дней для хранения выгруженных записей на устройстве"
+        },
+        "deleteAfterUpload": {
+          "label": "Удалять сразу после выгрузки"
+        },
+        "disableContextProtection": {
+          "label": "Показывать приложение в записи рабочего стола",
+          "warning": "Требуется перезапуск приложения"
+        },
+        "drawerTitle": "Настройки",
+        "dualCamModeEnabledCheckbox": {
+          "label": "Включить поддержку записи двух источников видео"
+        },
+        "group": {
+          "audioProcessorSettings": {
+            "title": "Настройки аудио процессора"
+          },
+          "communicationSettings": {
+            "title": "Настройки конференций и трансляций"
+          },
+          "connectionSettings": {
+            "title": "Настройки подключения к сервису Актру"
+          },
+          "moodleSettings": {
+            "title": "Настройки Moodle"
+          },
+          "ptzCameraSettings": {
+            "title": "Настройки PTZ камеры"
+          },
+          "recordingSettings": {
+            "title": "Настройки записи"
+          },
+          "sakaiSettings": {
+            "title": "Настройки Sakai"
+          },
+          "scheduleSettings": {
+            "title": "Настройки расписания"
+          }
+        },
+        "microphoneEnabledCheckbox": {
+          "label": "Включить микрофон при запуске"
+        },
+        "mirrorCameraCheckbox": {
+          "label": "Включить отзеркаливание изображения в предпросмотре камеры"
+        },
+        "moodleEnabledCheckbox": {
+          "label": "Добавлять записи в Moodle"
+        },
+        "moodleTokenField": {
+          "label": "Токен доступа к Moodle",
+          "placeholder": "Введите секрет токена доступа к Moodle"
+        },
+        "moodleUrlField": {
+          "label": "Адрес Moodle",
+          "placeholder": "URL адрес Moodle, в который нужно добавлять записи"
+        },
+        "noScheduleTokenWarningText": {
+          "text": "Токен расписания не найден. Убедитесь в наличии действующей лицензии и перезапустите приложение."
+        },
+        "noVideoSourceWarning": {
+          "text": "Выберите и включите хотя бы один видео источник, чтобы настройки расписания стали доступны."
+        },
+        "passwordDialog": {
+          "text": "Пожалуйста, введите пароль для доступа к экспертным настройкам."
+        },
+        "presenceControl": {
+          "label": "Контроль присутствия"
+        },
+        "ptzCameraControlsEnabledCheckbox": {
+          "label": "Включить управление PTZ камерой"
+        },
+        "ptzCameraIpField": {
+          "label": "IP адрес PTZ камеры",
+          "placeholder": "Введите IP адрес PTZ камеры"
+        },
+        "reactivateScheduleCheckbox": {
+          "label": "Возвращаться в режим записи по расписанию автоматически"
+        },
+        "recordingPath": {
+          "label": "Путь сохранения записей"
+        },
+        "resetPtzCameraPresetCheckbox": {
+          "label": "Сбрасывать ракурс камеры на стандартный после каждой записи"
+        },
+        "sakaiEnabledCheckbox": {
+          "label": "Добавлять записи в Sakai"
+        },
+        "sakaiLoginField": {
+          "label": "Логин доступа Sakai",
+          "placeholder": "Введите логин пользователя Sakai API"
+        },
+        "sakaiPasswordField": {
+          "label": "Пароль доступа Sakai",
+          "placeholder": "Введите пароль пользователя Sakai API"
+        },
+        "sakaiUrlField": {
+          "label": "Адрес Sakai",
+          "placeholder": "URL адрес Sakai, в который нужно добавлять записи"
+        },
+        "scheduleCommunicationCheckbox": {
+          "label": "Включить запуск конференции/трансляции по расписанию"
+        },
+        "scheduleEnabledCheckbox": {
+          "label": "Включить запись по расписанию"
+        },
+        "scheduleRoomNumber": {
+          "label": "Номер аудитории в расписании Актру",
+          "placeholder": "Введите номер аудитории в сервисе расписания Актру"
+        },
+        "scheduleUrlField": {
+          "label": "Адрес расписания Актру",
+          "placeholder": "Введите URL сервиса расписания Актру"
+        },
+        "servicePartnerIdField": {
+          "label": "Идентификатор партнёра",
+          "placeholder": "Введите идентификатор партнёра в системе Актру"
+        },
+        "servicePartnerSecretField": {
+          "label": "Секрет партнёра",
+          "placeholder": "Введите административный секрет партнёра для создания токена доступа"
+        },
+        "serviceTokenIdField": {
+          "label": "Идентификатор токена доступа",
+          "placeholder": "Введите идентификатор токена доступа Актру API"
+        },
+        "serviceTokenSecretField": {
+          "label": "Секрет токена доступа",
+          "placeholder": "Введите секрет токена доступа Актру API"
+        },
+        "serviceUrlField": {
+          "label": "Адрес сервиса",
+          "placeholder": "Введите базовый URL адрес сервиса Актру"
+        },
+        "showExpertSettingsSwitch": {
+          "label": "Режим обслуживания"
+        },
+        "validationErrors": {
+          "invalidScheduleRoomNumber": "Аудитория с указанным номером не найдена в сервисе расписания!",
+          "invalidScheduleUrl": "Сервис расписания не обнаружен по указанному адресу!"
+        },
+        "videoBitrateSelectField": {
+          "label": "Видео битрейт"
+        },
+        "videoCodecSelectField": {
+          "label": "Видео кодек"
+        },
+        "videoResolutionSelectField": {
+          "label": "Разрешение видео"
+        },
+        "windowTitle": "Настройки приложения"
+      }
+    },
+    "entry": {
+      "confirmDialog": {
+        "content": "Вы уверены, что хотите отменить и удалить эту запись?",
+        "title": "Требуется подтверждение"
+      },
+      "deleteButton": {
+        "text": "Удалить запись"
+      },
+      "entryDescriptionField": {
+        "label": "Описание",
+        "placeholder": "Развёрнутое описание записи"
+      },
+      "entryEmailField": {
+        "label": "Email",
+        "placeholder": "Адрес электронной почты преподавателя"
+      },
+      "entryFacultiesField": {
+        "label": "Факультеты",
+        "placeholder": "Названия факультетов через запятую"
+      },
+      "entryGroupsField": {
+        "label": "Группы",
+        "placeholder": "Названия/номера групп через запятую"
+      },
+      "entryNameField": {
+        "label": "Название",
+        "placeholder": "Название записи в Актру"
+      },
+      "entrySubjectField": {
+        "label": "Предмет",
+        "placeholder": "Название предмета"
+      },
+      "entryTagsField": {
+        "label": "Теги",
+        "placeholder": "Теги через запятую"
+      },
+      "entryTeacherField": {
+        "label": "Преподаватель",
+        "placeholder": "Ф.И.О преподавателя"
+      },
+      "entryTypeField": {
+        "label": "Тип занятия",
+        "placeholder": "Тип занятия: Лекция, Лабораторная, Семинар и т.д."
+      },
+      "entryYearField": {
+        "label": "Курс",
+        "placeholder": "Учебный курс: 1-й курс, 2-й курс, и т.д."
+      },
+      "passwordDialog": {
+        "title": "Введите пароль"
+      },
+      "recordingPreview": {
+        "sourceTitle": "Запись источника"
+      },
+      "saveButton": {
+        "text": "Сохранить и загрузить"
+      },
+      "title": {
+        "saveEntry": "Сохранить запись",
+        "viewEntry": "Просмотр записи"
+      }
+    },
+    "general": {
+      "close": "Закрыть окно",
+      "minimize": "Свернуть окно"
+    },
+    "main": {
+      "CaptureSourceSelector": {
+        "dropdown": {
+          "text": "Выбор источника захвата"
+        }
+      },
+      "audioSourceSelector": {
+        "dropdown": {
+          "text": "Микрофон"
+        },
+        "toggle": {
+          "title": "Нажмите, что включить или выключить запись звука"
+        }
+      },
+      "cameraSourceSelector": {
+        "dropdown": {
+          "text": "Источник видео"
+        },
+        "toggle": {
+          "title": "Нажмите, что включить или выключить запись с этого источника видео"
+        }
+      },
+      "desktopAudioCaptureEnabled": {
+        "title": "Записывать системные звуки"
+      },
+      "desktopAudioToggle": {
+        "title": "Звуки приложений",
+        "tooltip": {
+          "disabled": "Захват звука приложений недоступен при текущих настройках",
+          "text": "Нажмите, что включить или выключить запись звуков приложений"
+        }
+      },
+      "desktopSourceSelector": {
+        "dropdown": {
+          "text": "Рабочий стол"
+        },
+        "toggle": {
+          "title": "Нажмите, что включить или выключить запись рабочего стола"
+        }
+      },
+      "manageButton": {
+        "text": "Настройки",
+        "title": "Управление библиотекой и настройками"
+      },
+      "recordButton": {
+        "title": "Начать запись"
+      },
+      "scheduleEnabledIcon": {
+        "title": "Включена запись по расписанию"
+      },
+      "sourceSelector": {
+        "toggle": {
+          "title": {
+            "scheduledRecordingEnabled": "Изменение источников недоступно,\nпока включена запись по расписанию."
+          }
+        }
+      }
+    },
+    "recording": {
+      "CommunicationPanel": {
+        "text": "Ведётся трансляция!"
+      },
+      "cancelButton": {
+        "title": "Отменить запись"
+      },
+      "cancelConfirmDialog": {
+        "buttons": {
+          "confirm": "Удалить",
+          "refuse": "Отмена"
+        },
+        "content": {
+          "manual": "Вы уверены, что хотите удалить текущую запись?",
+          "scheduled": "Вы уверены, что хотите удалить текущую запись? Следующая запись начнётся по расписанию."
+        }
+      },
+      "error": {
+        "audioSourceInitError": "Не удалось инициализировать устройство захвата звука. Убедитесь, что оно подключено, или выберите другое.",
+        "cameraSourceInitError": "Не удалось инициализировать устройство захвата камеры. Убедитесь, что оно подключено, или выберите другое.",
+        "desktopAudioSourceInitError": "Не удалось инициализировать устройство захвата звука рабочего стола. Убедитесь, что ваш антивирус не блокирует захват экрана/рабочего стола.",
+        "desktopSourceInitError": "Не удалось инициализировать устройство захвата рабочего стола. Убедитесь, что оно подключено, или выберите другое.",
+        "emptyRecording": "Ничего не записалось.",
+        "errorWritingToFile": "Не удалось сохранить данные записи. Пожалуйста, проверьте, достаточно ли места на вашем устройстве хранения данных.",
+        "failedToCheckDiskSpace": "Не удалось проверить наличие свободного места на диске.",
+        "initError": "Ошибка инициализации",
+        "insufficientDiskSpace": "Недостаточно свободного места на диске. Для записи требуется не менее {{size}}.",
+        "noAudioSource": "Источник звука не выбран, но захват звука включен. Пожалуйста, выберите устройство захвата звука.",
+        "noCameraSource": "Источник камеры не выбран, но захват камеры включен. Пожалуйста, выберите устройство захвата камеры.",
+        "noDesktopSource": "Источник рабочего стола не выбран, но захват рабочего стола включен. Пожалуйста, выберите устройство захвата рабочего стола.",
+        "noVideoSourcesSelected": "Не выбран источник видеосигнала. Пожалуйста, выберите хотя бы один источник: камеру или рабочий стол.",
+        "recordingError": "Ошибка записи",
+        "recordingPathNotSpecified": "Не задан путь сохранения записей. Пожалуйста, проверьте настройки."
+      },
+      "hideButton": {
+        "title": "Скрыть окно"
+      },
+      "muteDesktopAudioButton": {
+        "mute": {
+          "title": "Отключить звуки приложений"
+        },
+        "unmute": {
+          "title": "Включить звуки приложений"
+        }
+      },
+      "muteMicrophoneAudioButton": {
+        "mute": {
+          "title": "Отключить запись аудио"
+        },
+        "unmute": {
+          "title": "Включить запись аудио"
+        }
+      },
+      "mutedMicrophoneNotification": {
+        "text": "Микрофон выключен!"
+      },
+      "pauseButton": {
+        "pause": {
+          "title": "Пауза"
+        },
+        "play": {
+          "title": "Возобновить"
+        }
+      },
+      "previewButton": {
+        "title": "Предпросмотр"
+      },
+      "stopButton": {
+        "title": "Остановить запись"
+      }
+    },
+    "splash": {
+      "updating": "Поиск и скачивание обновлений..."
+    }
+  }
+}

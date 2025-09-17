@@ -1,0 +1,5 @@
+{
+  "bucket": "bucket-name",
+  "accessKeyId": "yandex-access-key-id",
+  "secretAccessKey": "yandex-access-key-secret"
+}
