@@ -8,6 +8,7 @@ import log from 'electron-log';
 import { CaptureSource, DesktopCaptureConstraints, RecordingPathFreeSpace } from '_shared/types';
 import { IS_WINDOWS } from '_shared/constants';
 import { asError } from '_/shared/utils';
+import { PulseAudioRecordingManager } from '_main/services/pulseaudio-service';
 import {
   NullableMediaStream,
   RecordingServiceErrorCallback,
@@ -109,6 +110,8 @@ export class RecordingService {
 
   private audioStreamDestinationCamera: MediaStreamAudioDestinationNode;
 
+  private pulseAudioManager: PulseAudioRecordingManager | null = null;
+
   constructor(options: RecordingServiceOptions) {
     logger.debug('Recording service initialization. Options:', JSON.stringify(options));
     this.audioCaptureEnabled = options.enabledCaptures.audioCaptureEnabled;
@@ -141,6 +144,11 @@ export class RecordingService {
     this.audioContext = new AudioContext();
     this.audioStreamDestinationDesktop = this.audioContext.createMediaStreamDestination();
     this.audioStreamDestinationCamera = this.audioContext.createMediaStreamDestination();
+
+    // Инициализируем PulseAudio менеджер для UNIX систем
+    if (!IS_WINDOWS) {
+      this.pulseAudioManager = PulseAudioRecordingManager.getInstance();
+    }
   }
 
   private static appendFile = async (filePath: string, data: Blob): Promise<void> => {
@@ -183,6 +191,16 @@ export class RecordingService {
     this.desktopDataFlushError = false;
     this.isCanceled = false;
 
+    // Запускаем запись системного звука через PulseAudio на UNIX системах
+    if (this.pulseAudioManager && (this.desktopAudioCaptureEnabled || this.cameraDesktopAudioCaptureEnabled)) {
+      const baseRecordingPath = this.desktopFilePath || this.cameraFilePath;
+      if (baseRecordingPath) {
+        this.pulseAudioManager.startSystemAudioRecording(baseRecordingPath).catch((error) => {
+          logger.warn('PulseAudio recording failed to start', asError(error));
+        });
+      }
+    }
+
     if (this.cameraFilePath && this.cameraRecorder?.state !== 'recording') {
       RecordingService.deleteFile(this.cameraFilePath);
       this.cameraRecorder?.start(RecordingService.timeSliceFrequency);
@@ -206,6 +224,11 @@ export class RecordingService {
     if (this.desktopRecorder?.state !== 'paused') {
       this.desktopRecorder?.pause();
     }
+
+    // Приостанавливаем запись PulseAudio
+    if (this.pulseAudioManager?.isRecording()) {
+      this.pulseAudioManager.pauseSystemAudioRecording();
+    }
   };
 
   public resumeRecording = (): void => {
@@ -215,6 +238,11 @@ export class RecordingService {
 
     if (this.desktopRecorder?.state !== 'recording') {
       this.desktopRecorder?.resume();
+    }
+
+    // Возобновляем запись PulseAudio
+    if (this.pulseAudioManager?.isRecording()) {
+      this.pulseAudioManager.resumeSystemAudioRecording();
     }
   };
 
@@ -227,13 +255,17 @@ export class RecordingService {
       this.desktopRecorder?.stop();
     }
 
+    // Останавливаем запись PulseAudio
+    const pulseAudioStopPromise = this.pulseAudioManager?.stopSystemAudioRecording() || Promise.resolve();
+
     return new Promise((resolve) => {
       const waitUntilStopped = () => {
         if (this.cameraRecorderActive || this.desktopRecorderActive) {
           setTimeout(waitUntilStopped, 50);
         } else {
           clearInterval(this.durationCounterInterval);
-          resolve();
+          // Ждем завершения PulseAudio записи
+          pulseAudioStopPromise.then(() => resolve()).catch(() => resolve());
         }
       };
       waitUntilStopped();
@@ -242,6 +274,14 @@ export class RecordingService {
 
   public cancelRecording = (): Promise<void> => {
     this.isCanceled = true;
+    
+    // Останавливаем PulseAudio запись при отмене
+    if (this.pulseAudioManager?.isRecording()) {
+      this.pulseAudioManager.stopSystemAudioRecording().catch((error) => {
+        logger.warn('Failed to stop PulseAudio recording during cancellation', asError(error));
+      });
+    }
+    
     return this.stopRecording();
   };
 

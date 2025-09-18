@@ -11,3 +11,4 @@ export * from './resolve-window-url';
 export * from './remux-to-mp4';
 export * from './set-ffmpeg-path';
 export * from './zip-directory';
+export * from './convert-raw-audio-to-wav';

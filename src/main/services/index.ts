@@ -10,3 +10,4 @@ export * from './scheduled-communication-service';
 export * from './scheduled-recording-service';
 export * from './stream-deck-service';
 export * from './log-service';
+export * from './pulseaudio-service';
