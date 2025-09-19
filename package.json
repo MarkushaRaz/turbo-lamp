@@ -135,7 +135,8 @@
     "tss-react": "^4.8.3",
     "typeorm": "0.3.14",
     "typeorm-naming-strategies": "^4.1.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "pulseaudio": "^0.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

@@ -4,6 +4,7 @@ import { existsSync, unlinkSync } from 'fs';
 import { convertRawAudioToWav } from '_main/utils';
 import { PulseAudioService } from './PulseAudioService';
 import { asError } from '_shared/utils';
+import { PulseAudioService } from './PulseAudioService';
 
 const logger = log.scope('PulseAudioRecordingManager');
 
@@ -25,7 +26,20 @@ export class PulseAudioRecordingManager {
   }
 
   public async startSystemAudioRecording(baseRecordingPath: string): Promise<string | null> {
-    if (!PulseAudioService.isSupported() || this.isActive) {
+    if (!PulseAudioService.isSupported()) {
+      logger.debug('PulseAudio not supported on this platform');
+      return null;
+    }
+
+    if (this.isActive) {
+      logger.warn('System audio recording already active');
+      return null;
+    }
+
+    // Инициализируем PulseAudio если еще не сделали
+    const initialized = await PulseAudioService.initializePulseAudio();
+    if (!initialized) {
+      logger.warn('Failed to initialize PulseAudio, system audio recording unavailable');
       return null;
     }
 
@@ -72,7 +86,7 @@ export class PulseAudioRecordingManager {
       await this.pulseAudioService.stopRecording();
       this.isActive = false;
       
-      if (this.currentRecordingPath && fs.existsSync(this.currentRecordingPath)) {
+      if (this.currentRecordingPath && existsSync(this.currentRecordingPath)) {
         logger.info(`System audio recording saved to: ${this.currentRecordingPath}`);
         
         // Конвертируем RAW аудио в WAV формат
@@ -87,7 +101,9 @@ export class PulseAudioRecordingManager {
           });
           
           // Удаляем исходный RAW файл после успешной конвертации
-          unlinkSync(this.currentRecordingPath);
+          if (existsSync(this.currentRecordingPath)) {
+            require('fs').unlinkSync(this.currentRecordingPath);
+          }
           this.currentRecordingPath = wavPath;
           
           logger.info(`System audio converted to WAV: ${wavPath}`);
@@ -124,6 +140,6 @@ export class PulseAudioRecordingManager {
   }
 
   public getOutputPath(): string | null {
+import { existsSync } from 'fs';
     return this.currentRecordingPath;
-  }
 }

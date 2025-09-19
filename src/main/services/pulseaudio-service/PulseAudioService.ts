@@ -1,9 +1,13 @@
 import log from 'electron-log';
-import { spawn, ChildProcess } from 'child_process';
+import { spawn, ChildProcess, exec } from 'child_process';
 import { createWriteStream, WriteStream } from 'fs';
+import { promisify } from 'util';
 import { asError } from '_shared/utils';
 import { IS_WINDOWS } from '_shared/constants';
 import { PulseAudioConfig, PulseAudioSource } from './types';
+import { PulseAudioInstaller } from './PulseAudioInstaller';
+
+const execAsync = promisify(exec);
 
 const logger = log.scope('PulseAudioService');
 
@@ -36,9 +40,30 @@ export class PulseAudioService {
     return !IS_WINDOWS;
   }
 
+  public static async initializePulseAudio(): Promise<boolean> {
+    if (!PulseAudioService.isSupported()) {
+      return false;
+    }
+
+    try {
+      logger.info('Initializing PulseAudio support');
+      return await PulseAudioInstaller.checkAndInstallPulseAudio();
+    } catch (error) {
+      logger.error('Failed to initialize PulseAudio', asError(error));
+      return false;
+    }
+  }
+
   public async getAvailableSources(): Promise<PulseAudioSource[]> {
     if (!PulseAudioService.isSupported()) {
       logger.warn('PulseAudio is not supported on this platform');
+      return [];
+    }
+
+    // Убеждаемся, что PulseAudio запущен
+    const isRunning = await PulseAudioInstaller.ensurePulseAudioRunning();
+    if (!isRunning) {
+      logger.warn('PulseAudio is not running and could not be started');
       return [];
     }
 
@@ -109,6 +134,12 @@ export class PulseAudioService {
   public async startRecording(sourceName: string, outputPath: string): Promise<void> {
     if (!PulseAudioService.isSupported()) {
       throw new Error('PulseAudio is not supported on this platform');
+    }
+
+    // Убеждаемся, что PulseAudio запущен перед началом записи
+    const isRunning = await PulseAudioInstaller.ensurePulseAudioRunning();
+    if (!isRunning) {
+      throw new Error('PulseAudio is not running and could not be started');
     }
 
     if (this.isRecording) {

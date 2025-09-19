@@ -8,7 +8,7 @@ import log from 'electron-log';
 import { CaptureSource, DesktopCaptureConstraints, RecordingPathFreeSpace } from '_shared/types';
 import { IS_WINDOWS } from '_shared/constants';
 import { asError } from '_/shared/utils';
-import { PulseAudioRecordingManager } from '_main/services/pulseaudio-service';
+import { PulseAudioRecordingManager, PulseAudioService } from '_main/services/pulseaudio-service';
 import {
   NullableMediaStream,
   RecordingServiceErrorCallback,
@@ -147,7 +147,17 @@ export class RecordingService {
 
     // Инициализируем PulseAudio менеджер для UNIX систем
     if (!IS_WINDOWS) {
-      this.pulseAudioManager = PulseAudioRecordingManager.getInstance();
+      // Проверяем доступность PulseAudio перед инициализацией
+      PulseAudioService.initializePulseAudio().then((initialized) => {
+        if (initialized) {
+          this.pulseAudioManager = PulseAudioRecordingManager.getInstance();
+          logger.info('PulseAudio recording manager initialized');
+        } else {
+          logger.warn('PulseAudio not available, system audio recording disabled');
+        }
+      }).catch((error) => {
+        logger.error('Failed to initialize PulseAudio', asError(error));
+      });
     }
   }
 

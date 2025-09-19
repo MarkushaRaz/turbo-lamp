@@ -15,6 +15,7 @@
     "better-sqlite3": "^8.3.0",
     "bufferutil": "^4.0.1",
     "ffmpeg-static": "^5.1.0",
-    "utf-8-validate": "^5.0.2"
+    "utf-8-validate": "^5.0.2",
+    "pulseaudio": "^0.0.3"
   }
 }
